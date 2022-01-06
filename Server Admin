@@ -1,16 +1,44 @@
+
+FELOADLIBRARY = {}
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Sades160/roblox-reanimate/main/reanimate.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/GelatekWasTaken/GelatekV2/main/LoadLibrary.lua"))()
+loadstring(game:GetObjects("rbxassetid://5209815302")[1].Source)()
+
+
+if not _G.Velocity then _G.Velocity = Vector3.new(30,0,0) end
+
+-- adding net so we dont lose the body
+local plr = game:service'Players'.LocalPlayer
+game:GetService("RunService").RenderStepped:Connect(function()
+    settings().Physics.PhysicsEnvironmentalThrottle = Enum.EnviromentalPhysicsThrottle.Disabled
+    settings().Physics.AllowSleep = false
+    game.Players.LocalPlayer.ReplicationFocus = workspace
+    sethiddenproperty(plr,"SimulationRadius",1000)
+    sethiddenproperty(plr,"MaxSimulationRadius",1000)
+end)
+
+
+local Player = game.Players.LocalPlayer
+game:GetService("RunService").RenderStepped:Connect(function()
+    settings().Physics.PhysicsEnvironmentalThrottle = Enum.EnviromentalPhysicsThrottle.Disabled
+    settings().Physics.AllowSleep = false
+    game.Players.LocalPlayer.ReplicationFocus = workspace
+    sethiddenproperty(plr,"SimulationRadius",1000)
+    sethiddenproperty(plr,"MaxSimulationRadius",1000)
+end)
+
 --//=================================\\
 --|| 	      SERVER ADMIN
 --|| 	  CREATED BY SHACKLUSTER
---||  btw spec here, shack get yo game on i had to add back getmouse and some other missing stuff. smh 🙄 
+--||  
 --\\=================================//
 
-print("> Running Server Admin by Shackluster")
 
 loadstring(game:HttpGet('https://raw.githubusercontent.com/GelatekWasTaken/GelatekV2/main/LoadLibrary.lua',true))()
 wait(0.2)
 
 Player = Game:GetService("Players").LocalPlayer
-Character = Player.Character.Dummy.Dummy
+Character = Player.Character
 RootPart = Character["HumanoidRootPart"]
 Humanoid = Character.Humanoid
 PlayerGui = Player.PlayerGui
