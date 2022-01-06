@@ -1,6 +1,4 @@
 
-FELOADLIBRARY = {}
-loadstring(game:HttpGet('https://raw.githubusercontent.com/Sades160/roblox-reanimate/main/reanimate.lua',true))()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/GelatekWasTaken/GelatekV2/main/LoadLibrary.lua',true))()
 
 --- Did actually rework heavily away from original neptunian, and the non-rework neptunian. -- NoobyGames12
