@@ -1,8 +1,32 @@
+game:GetService("Players").LocalPlayer.Character["MeshPartAccessory"].Name = "gamer2"
+game:GetService("Players").LocalPlayer.Character["MeshPartAccessory"].Name = "gamer1"
+game:GetService("Players").LocalPlayer.Character["ShadowBladeMasterAccessory"].Name = "gamer3"
+game:GetService("Players").LocalPlayer.Character["MeshPartAccessory"].Name = "gamer4"
+game:GetService("Players").LocalPlayer.Character["MeshPartAccessory"].Name = "gamer5"
+game:GetService("Players").LocalPlayer.Character["BladeMasterAccessory"].Name = "gamer6"
+local resetBindable = Instance.new("BindableEvent")
+resetBindable.Event:connect(function()
+	local ts = game:GetService("TeleportService")
+
+	local p = game:GetService("Players").LocalPlayer
+
+
+
+	ts:Teleport(game.PlaceId, p)
+
+
+end)
+
+
+game:GetService("StarterGui"):SetCore("ResetButtonCallback", resetBindable)
+
+
 
 FELOADLIBRARY = {}
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Sades160/roblox-reanimate/main/reanimate.lua"))()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/GelatekWasTaken/GelatekV2/main/LoadLibrary.lua"))()
 loadstring(game:GetObjects("rbxassetid://5209815302")[1].Source)()
+
 
 if not _G.Velocity then _G.Velocity = Vector3.new(30,0,0) end
 
@@ -26,43 +50,6 @@ game:GetService("RunService").RenderStepped:Connect(function()
     sethiddenproperty(plr,"MaxSimulationRadius",1000)
 end)
 
-wait(0.5)
-
-
-
-
-local Player = game.Players.LocalPlayer
-local Mouse,mouse,UserInputService,ContextActionService
-do
-	script.Parent = Player.Character
-	local CAS = {Actions={}}
-	local Event = Instance.new("RemoteEvent")
-	Event.Name = "UserInput_Event"
-	Event.Parent = Player.Character
-	local fakeEvent = function()
-		local t = {_fakeEvent=true}
-		t.Connect = function(self,f)self.Function=f end
-		t.connect = t.Connect
-		return t
-	end
-	local m = {Target=nil,Hit=CFrame.new(),KeyUp=fakeEvent(),KeyDown=fakeEvent(),Button1Up=fakeEvent(),Button1Down=fakeEvent()}
-	local UIS = {InputBegan=fakeEvent(),InputEnded=fakeEvent()}
-	function CAS:BindAction(name,fun,touch,...)
-		CAS.Actions[name] = {Name=name,Function=fun,Keys={...}}
-	end
-	function CAS:UnbindAction(name)
-		CAS.Actions[name] = nil
-	end
-	local function te(self,ev,...)
-		local t = m[ev]
-		if t and t._fakeEvent and t.Function then
-			t.Function(...)
-		end
-	end
-	m.TrigEvent = te
-	UIS.TrigEvent = te
-end
-wait(0.5)
 
 warn([[Galaxy Glitcher Loaded.
 The third glitcher, once as the core is now new.
@@ -1146,6 +1133,34 @@ local handleweld = CreateWeld(handle,tors,handle,0,-1.5,-1.05,math.rad(0),math.r
 local lwing1 = CreateParta(m,1,1,"Neon",maincolor)
 CreateMesh(handle,"Brick",0.5,0.5,0.5)
 local lwing1weld = CreateWeld(lwing1,handle,lwing1,3,0,0,math.rad(5),math.rad(0),math.rad(12.5),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+local hat = game:GetService("Players").LocalPlayer.Character["gamer1"]
+
+local function align(part0, part1)
+
+	part0.AccessoryWeld:Destroy()
+	local attachment0 = Instance.new("Attachment", part0)
+	attachment0.Position = Vector3.new(0, -0, 0) --Custom Positioning Values Here
+	attachment0.Orientation = Vector3.new(0, 0, -40) --Custom Rotationing Values here
+	local attachment1 = Instance.new("Attachment", part1)
+	local weldpos = Instance.new("AlignPosition", part0)
+	weldpos.Attachment0 = attachment0
+	weldpos.Attachment1 = attachment1
+	weldpos.RigidityEnabled = true
+	weldpos.ReactionForceEnabled = false
+	weldpos.ApplyAtCenterOfMass = false
+	weldpos.MaxForce = 20000
+	weldpos.MaxVelocity = math.huge
+	weldpos.Responsiveness = 200000000000000
+	local weldrot = Instance.new("AlignOrientation", part0)
+	weldrot.Attachment0 = attachment0
+	weldrot.Attachment1 = attachment1
+	weldrot.ReactionTorqueEnabled = false
+	weldrot.PrimaryAxisOnly = false
+	weldrot.MaxTorque = 200000000
+	weldrot.MaxAngularVelocity = math.huge
+	weldrot.Responsiveness = 200000000000000
+end
+align(hat.Handle, lwing1)
 
 wed = CreateParta(mw1,0,0,"Neon",halocolor)
 CreateMesh(wed,"Wedge",0.05,0.5,0.5)
@@ -1182,6 +1197,34 @@ CreateWeld(wed,lwing1,wed,0,-2.5,0.125,math.rad(90),math.rad(90),math.rad(90),0,
 local lwing2 = CreateParta(m,1,1,"Neon",maincolor)
 CreateMesh(handle,"Brick",0.5,0.5,0.5)
 local lwing2weld = CreateWeld(lwing2,handle,lwing2,4,1,0,math.rad(10),math.rad(0),math.rad(25),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+local hat = game:GetService("Players").LocalPlayer.Character["gamer2"]
+
+local function align(part0, part1)
+
+	part0.AccessoryWeld:Destroy()
+	local attachment0 = Instance.new("Attachment", part0)
+	attachment0.Position = Vector3.new(0, -0, 0) --Custom Positioning Values Here
+	attachment0.Orientation = Vector3.new(0, 0, -40) --Custom Rotationing Values here
+	local attachment1 = Instance.new("Attachment", part1)
+	local weldpos = Instance.new("AlignPosition", part0)
+	weldpos.Attachment0 = attachment0
+	weldpos.Attachment1 = attachment1
+	weldpos.RigidityEnabled = true
+	weldpos.ReactionForceEnabled = false
+	weldpos.ApplyAtCenterOfMass = false
+	weldpos.MaxForce = 20000
+	weldpos.MaxVelocity = math.huge
+	weldpos.Responsiveness = 200000000000000
+	local weldrot = Instance.new("AlignOrientation", part0)
+	weldrot.Attachment0 = attachment0
+	weldrot.Attachment1 = attachment1
+	weldrot.ReactionTorqueEnabled = false
+	weldrot.PrimaryAxisOnly = false
+	weldrot.MaxTorque = 200000000
+	weldrot.MaxAngularVelocity = math.huge
+	weldrot.Responsiveness = 200000000000000
+end
+align(hat.Handle, lwing2)
 
 wed = CreateParta(mw1,0,0,"Neon",halocolor)
 CreateMesh(wed,"Wedge",0.05,0.5,0.5)
@@ -1217,6 +1260,34 @@ CreateWeld(wed,lwing2,wed,0,-2.5,0.125,math.rad(90),math.rad(90),math.rad(90),0,
 local lwing3 = CreateParta(m,1,1,"Neon",maincolor)
 CreateMesh(handle,"Brick",0.5,0.5,0.5)
 local lwing3weld = CreateWeld(lwing3,handle,lwing3,4.75,2,0,math.rad(15),math.rad(0),math.rad(37.5),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+local hat = game:GetService("Players").LocalPlayer.Character["gamer3"]
+
+local function align(part0, part1)
+
+	part0.AccessoryWeld:Destroy()
+	local attachment0 = Instance.new("Attachment", part0)
+	attachment0.Position = Vector3.new(0, -0, 0) --Custom Positioning Values Here
+	attachment0.Orientation = Vector3.new(0, 0, -40) --Custom Rotationing Values here
+	local attachment1 = Instance.new("Attachment", part1)
+	local weldpos = Instance.new("AlignPosition", part0)
+	weldpos.Attachment0 = attachment0
+	weldpos.Attachment1 = attachment1
+	weldpos.RigidityEnabled = true
+	weldpos.ReactionForceEnabled = false
+	weldpos.ApplyAtCenterOfMass = false
+	weldpos.MaxForce = 20000
+	weldpos.MaxVelocity = math.huge
+	weldpos.Responsiveness = 200000000000000
+	local weldrot = Instance.new("AlignOrientation", part0)
+	weldrot.Attachment0 = attachment0
+	weldrot.Attachment1 = attachment1
+	weldrot.ReactionTorqueEnabled = false
+	weldrot.PrimaryAxisOnly = false
+	weldrot.MaxTorque = 200000000
+	weldrot.MaxAngularVelocity = math.huge
+	weldrot.Responsiveness = 200000000000000
+end
+align(hat.Handle, lwing3)
 
 wed = CreateParta(mw1,0,0,"Neon",halocolor)
 CreateMesh(wed,"Wedge",0.05,0.5,0.5)
@@ -1305,7 +1376,34 @@ CreateWeld(wed,lwing6,wed,0,-1.75,0.25,math.rad(90),math.rad(90),math.rad(90),0,
 local rwing1 = CreateParta(m,1,1,"Neon",maincolor)
 CreateMesh(handle,"Brick",0.5,0.5,0.5)
 local rwing1weld = CreateWeld(rwing1,handle,rwing1,-3,0,0,math.rad(5),math.rad(0),math.rad(-12.5),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+local hat = game:GetService("Players").LocalPlayer.Character["gamer4"]
 
+local function align(part0, part1)
+
+	part0.AccessoryWeld:Destroy()
+	local attachment0 = Instance.new("Attachment", part0)
+	attachment0.Position = Vector3.new(0, -0, 0) --Custom Positioning Values Here
+	attachment0.Orientation = Vector3.new(0, 0, -40) --Custom Rotationing Values here
+	local attachment1 = Instance.new("Attachment", part1)
+	local weldpos = Instance.new("AlignPosition", part0)
+	weldpos.Attachment0 = attachment0
+	weldpos.Attachment1 = attachment1
+	weldpos.RigidityEnabled = true
+	weldpos.ReactionForceEnabled = false
+	weldpos.ApplyAtCenterOfMass = false
+	weldpos.MaxForce = 20000
+	weldpos.MaxVelocity = math.huge
+	weldpos.Responsiveness = 200000000000000
+	local weldrot = Instance.new("AlignOrientation", part0)
+	weldrot.Attachment0 = attachment0
+	weldrot.Attachment1 = attachment1
+	weldrot.ReactionTorqueEnabled = false
+	weldrot.PrimaryAxisOnly = false
+	weldrot.MaxTorque = 200000000
+	weldrot.MaxAngularVelocity = math.huge
+	weldrot.Responsiveness = 200000000000000
+end
+align(hat.Handle, rwing1)
 wed = CreateParta(mw2,0,0,"Neon",halocolor)
 CreateMesh(wed,"Wedge",0.05,0.5,0.5)
 CreateWeld(wed,rwing1,wed,0,0,0.25,math.rad(0),math.rad(90),math.rad(0),0,0,0,math.rad(0),math.rad(0),math.rad(0))
@@ -1340,7 +1438,34 @@ CreateWeld(wed,rwing1,wed,0,-2.5,0.125,math.rad(90),math.rad(90),math.rad(90),0,
 local rwing2 = CreateParta(m,1,1,"Neon",maincolor)
 CreateMesh(handle,"Brick",0.5,0.5,0.5)
 local rwing2weld = CreateWeld(rwing2,handle,rwing2,-4,1,0,math.rad(10),math.rad(0),math.rad(-25),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+local hat = game:GetService("Players").LocalPlayer.Character["gamer5"]
 
+local function align(part0, part1)
+
+	part0.AccessoryWeld:Destroy()
+	local attachment0 = Instance.new("Attachment", part0)
+	attachment0.Position = Vector3.new(0, -0, 0) --Custom Positioning Values Here
+	attachment0.Orientation = Vector3.new(0, 0, -40) --Custom Rotationing Values here
+	local attachment1 = Instance.new("Attachment", part1)
+	local weldpos = Instance.new("AlignPosition", part0)
+	weldpos.Attachment0 = attachment0
+	weldpos.Attachment1 = attachment1
+	weldpos.RigidityEnabled = true
+	weldpos.ReactionForceEnabled = false
+	weldpos.ApplyAtCenterOfMass = false
+	weldpos.MaxForce = 20000
+	weldpos.MaxVelocity = math.huge
+	weldpos.Responsiveness = 200000000000000
+	local weldrot = Instance.new("AlignOrientation", part0)
+	weldrot.Attachment0 = attachment0
+	weldrot.Attachment1 = attachment1
+	weldrot.ReactionTorqueEnabled = false
+	weldrot.PrimaryAxisOnly = false
+	weldrot.MaxTorque = 200000000
+	weldrot.MaxAngularVelocity = math.huge
+	weldrot.Responsiveness = 200000000000000
+end
+align(hat.Handle, rwing2)
 wed = CreateParta(mw2,0,0,"Neon",halocolor)
 CreateMesh(wed,"Wedge",0.05,0.5,0.5)
 CreateWeld(wed,rwing2,wed,0,0,0.25,math.rad(0),math.rad(90),math.rad(0),0,0,0,math.rad(0),math.rad(0),math.rad(0))
@@ -1375,6 +1500,34 @@ CreateWeld(wed,rwing2,wed,0,-2.5,0.125,math.rad(90),math.rad(90),math.rad(90),0,
 local rwing3 = CreateParta(m,1,1,"Neon",maincolor)
 CreateMesh(handle,"Brick",0.5,0.5,0.5)
 local rwing3weld = CreateWeld(rwing3,handle,rwing3,-4.75,2,0,math.rad(15),math.rad(0),math.rad(-37.5),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+local hat = game:GetService("Players").LocalPlayer.Character["gamer6"]
+
+local function align(part0, part1)
+
+	part0.AccessoryWeld:Destroy()
+	local attachment0 = Instance.new("Attachment", part0)
+	attachment0.Position = Vector3.new(0, -0, 0) --Custom Positioning Values Here
+	attachment0.Orientation = Vector3.new(0, 0, -40) --Custom Rotationing Values here
+	local attachment1 = Instance.new("Attachment", part1)
+	local weldpos = Instance.new("AlignPosition", part0)
+	weldpos.Attachment0 = attachment0
+	weldpos.Attachment1 = attachment1
+	weldpos.RigidityEnabled = true
+	weldpos.ReactionForceEnabled = false
+	weldpos.ApplyAtCenterOfMass = false
+	weldpos.MaxForce = 20000
+	weldpos.MaxVelocity = math.huge
+	weldpos.Responsiveness = 200000000000000
+	local weldrot = Instance.new("AlignOrientation", part0)
+	weldrot.Attachment0 = attachment0
+	weldrot.Attachment1 = attachment1
+	weldrot.ReactionTorqueEnabled = false
+	weldrot.PrimaryAxisOnly = false
+	weldrot.MaxTorque = 200000000
+	weldrot.MaxAngularVelocity = math.huge
+	weldrot.Responsiveness = 200000000000000
+end
+align(hat.Handle, rwing3)
 
 wed = CreateParta(mw2,0,0,"Neon",halocolor)
 CreateMesh(wed,"Wedge",0.05,0.5,0.5)
